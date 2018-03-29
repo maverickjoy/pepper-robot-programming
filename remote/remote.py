@@ -1,11 +1,15 @@
 import qi
-import argparse
 import sys
-import motion
 import time
 import almath
+import motion
+import random
+import argparse
 from PIL import Image
 
+
+# ==============================================================================
+#                      --- CAMERA INFORMATION ---
 
 # AL_resolution
 AL_kQQQQVGA = 8 	#Image of 40*30px
@@ -24,20 +28,23 @@ AL_kDepthCamera  = 2
 # Need to add All color space variables
 AL_kBGRColorSpace = 13
 
+# ==============================================================================
 
 
 class Remote():
+
     def __init__(self,session):
+
+        # SUBSCRIBING SERVICES
         self.motion_service           = session.service("ALMotion")
         self.posture_service          = session.service("ALRobotPosture")
         self.tts                      = session.service("ALTextToSpeech")
         self.animation_player_service = session.service("ALAnimationPlayer")
         self.video                    = session.service("ALVideoDevice")
 
+        # INITIALISING CAMERA POINTERS
         self.imageNo2d                = 1
         self.imageNo3d                = 1
-        self.counter2d                = 1
-        self.counter3d                = 1
 
 
     def _userArmArticular(self):
@@ -57,6 +64,8 @@ class Remote():
         self.motion_service.angleInterpolationWithSpeed(JointNames, Arm2, pFractionMaxSpeed)
         self.motion_service.angleInterpolationWithSpeed(JointNames, Arm1, pFractionMaxSpeed)
 
+        return
+
     def _rotateHead(self):
 
         JointNamesH = ["HeadPitch", "HeadYaw"] # range ([-1,1],[-0.5,0.5]) // HeadPitch :{(-)up,(+)down} , HeadYaw :{(-)left,(+)right}
@@ -71,13 +80,14 @@ class Remote():
         self.motion_service.angleInterpolationWithSpeed(JointNamesH, HeadA, pFractionMaxSpeed)
         time.sleep(1)
 
+        return
+
     def _capture2dImage(self,cameraId):
         # Capture Image in RGB
 
         # WARNING : The same Name could be used only six time.
-        strName = "capture2dImage_{}".format(self.counter2d)
-        if self.imageNo2d >= 5 :
-            self.counter2d += 1
+        strName = "capture2DImage_{}".format(random.randint(1,10000000000))
+
 
         clientRGB = self.video.subscribeCamera(strName, cameraId, AL_kVGA, 11, 10)
         imageRGB = self.video.getImageRemote(clientRGB)
@@ -89,19 +99,20 @@ class Remote():
 
         # Create a PIL Image from our pixel array.
         im = Image.frombytes("RGB", (imageWidth, imageHeight), image_string)
-        # Save the image.
+
+        # Save the image inside the images foler in pwd.
         image_name_2d = "images/img2d-" + str(self.imageNo2d) + ".png"
         im.save(image_name_2d, "PNG") # Stored in images folder in the pwd, if not present then create one
         self.imageNo2d += 1
         im.show()
 
+        return
+
     def _capture3dImage(self):
         # Depth Image in RGB
 
         # WARNING : The same Name could be used only six time.
-        strName = "capture3dImage_{}".format(self.counter3d)
-        if self.imageNo3d >= 5 :
-            self.counter3d += 1
+        strName = "capture3dImage_{}".format(random.randint(1,10000000000))
 
         clientRGB = self.video.subscribeCamera(strName, AL_kDepthCamera, AL_kQVGA, 11, 15)
         imageRGB = self.video.getImageRemote(clientRGB)
@@ -113,11 +124,14 @@ class Remote():
 
         # Create a PIL Image from our pixel array.
         im = Image.frombytes("RGB", (imageWidth, imageHeight), image_string)
-        # Save the image.
+
+        # Save the image inside the images foler in pwd.
         image_name_3d = "images/img3d-" + str(self.imageNo3d) + ".png"
         im.save(image_name_3d, "PNG") # Stored in images folder in the pwd, if not present then create one
         self.imageNo3d += 1
         im.show()
+
+        return
 
     def _moveForward(self, amnt):
         #TARGET VELOCITY
@@ -141,6 +155,8 @@ class Remote():
         time.sleep(float(amnt))
         print "Forward Movement Complete"
         print "====================================================================="
+
+        return
 
     # @WARNING : Dont Use this as Pepper doesn't have a sensor at its back
     def _moveBackward(self, amnt):
@@ -166,6 +182,7 @@ class Remote():
         print "Backward Movement Complete"
         print "====================================================================="
 
+        return
 
     def _rotateRight(self, amnt):
         #TARGET VELOCITY
@@ -190,6 +207,7 @@ class Remote():
         print "Rotate Right Movement Complete"
         print "====================================================================="
 
+        return
 
     def _rotateLeft(self, amnt):
         #TARGET VELOCITY
@@ -214,6 +232,7 @@ class Remote():
         print "Rotate Left Movement Complete"
         print "====================================================================="
 
+        return
 
     def run(self):
 
@@ -228,12 +247,10 @@ class Remote():
         ## Enable arms control by Motion algorithm
         #####################
         self.motion_service.setMoveArmsEnabled(True, True)
-        # self.motion_service.setMoveArmsEnabled(False, False)
 
         #####################
         ## FOOT CONTACT PROTECTION
         #####################
-        #self.motion_service.setMotionConfig([["ENABLE_FOOT_CONTACT_PROTECTION", False]])
         self.motion_service.setMotionConfig([["ENABLE_FOOT_CONTACT_PROTECTION", True]])
 
         while(1):
@@ -365,12 +382,6 @@ class Remote():
                 print "This example is not allowed on this robot."
                 exit()
 
-        # userArmsCartesian(self.motion_service)
-        #
-        # print "====================================================================="
-        # print "Arm Movement"
-        # print "====================================================================="
-
         print "====================================================================="
         print "End Movement"
         print "====================================================================="
@@ -378,13 +389,14 @@ class Remote():
         # Go to rest position
         self.motion_service.rest()
 
-
+        return
 
 
 def main(session):
+
     remote = Remote(session)
     remote.run()
-
+    return
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
