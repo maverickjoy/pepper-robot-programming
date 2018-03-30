@@ -33,7 +33,7 @@ AL_kBGRColorSpace = 13
 
 class Remote():
 
-    def __init__(self,session):
+    def __init__(self, session):
 
         # SUBSCRIBING SERVICES
         self.motion_service           = session.service("ALMotion")
@@ -82,7 +82,7 @@ class Remote():
 
         return
 
-    def _capture2dImage(self,cameraId):
+    def _capture2dImage(self, cameraId):
         # Capture Image in RGB
 
         # WARNING : The same Name could be used only six time.

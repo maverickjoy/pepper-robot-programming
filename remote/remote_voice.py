@@ -96,7 +96,7 @@ class RemoteVoice(object):
         return
 
 
-    def _capture2dImage(self,cameraId):
+    def _capture2dImage(self, cameraId):
         # Capture Image in RGB
 
         # WARNING : The same Name could be used only six time.
@@ -240,7 +240,7 @@ class RemoteVoice(object):
         print "====================================================================="
 
 
-    def move_forward_event(self,value):
+    def move_forward_event(self, value):
         print "Got event Move Forward : ",str(value)
 
         try:
@@ -257,7 +257,7 @@ class RemoteVoice(object):
 
         return
 
-    def turn_around_event(self,value):
+    def turn_around_event(self, value):
         print "Got event Turn Around : ",str(value)
 
         try:
@@ -274,7 +274,7 @@ class RemoteVoice(object):
 
         return
 
-    def turn_left_event(self,value):
+    def turn_left_event(self, value):
         print "Got event turn left : ",str(value)
 
         try:
@@ -291,7 +291,7 @@ class RemoteVoice(object):
 
         return
 
-    def turn_right_event(self,value):
+    def turn_right_event(self, value):
         print "Got event turn right : ",str(value)
 
         try:
