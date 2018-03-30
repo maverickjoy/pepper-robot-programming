@@ -133,6 +133,11 @@ class Remote():
 
         return
 
+
+    '''
+    MOVERMENTS ARE RELATIVE HERE NOT ABSOLUTE, FOR ABSOLUTE MOVEMENT ONE CAN
+    USE ANGLES AND USE 'moveTo()' METHOD FOR IT.
+    '''
     def _moveForward(self, amnt):
         #TARGET VELOCITY
         X = 0.5  # forward

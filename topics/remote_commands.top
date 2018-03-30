@@ -1,0 +1,17 @@
+topic: ~remote_commands_topic()
+language: enu
+
+u: (Hi) Hi
+u: (Hello) hello
+# u: (move forward) ^pCall(ALMemory.raiseEvent("move_forward_event", "1.5")) Alternative way for procedure call.
+
+u: ([move start] * forward {direction}) Okay, I will move forward  $move_forward_event=2
+u: ([turn rotate] right) ^pCall(ALMemory.raiseEvent("turn_right_event", "3"))
+u: ([turn rotate] left) ^pCall(ALMemory.raiseEvent("turn_left_event", "3"))
+u: ([turn rotate] around) ^pCall(ALMemory.raiseEvent("turn_around_event", "6"))
+u: ([stop "stop movement" "stop now"]) $stop_movment_event="True"
+
+u: ([capture click] * [image picture])  Okay ! I will click a picture for you. $capture_image_event="2d"
+u: ([click capture] * [photo picture image])  Okay ! I will click a picture for you. $capture_image_event="2d"
+u: ([click capture] * image [2D duty today]) Okay ! I will click a picture for you. ^pCall(ALMemory.raiseEvent("capture_image_event", "2d"))
+u: ([click capture] * image [3D treaty])  Okay ! I will click a three D image for you. $capture_image_event="3d"

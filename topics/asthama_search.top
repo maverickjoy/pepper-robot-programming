@@ -1,0 +1,19 @@
+topic: ~asthama_search_topic()
+language: enu
+
+u: (Hi) Hi
+u: (Hello) hello
+u: ([Alright Okay Ok Sure]) yup
+u: (Thank you) Welcome
+u: ([capture click] * [image picture])  Okay ! I will click a picture for you. $capture_image_event="2d"
+u: ([click capture] * [photo picture image])  Okay ! I will click a picture for you. $capture_image_event="2d"
+u: ([click capture] * image [2D duty today]) Okay ! I will click a picture for you. ^pCall(ALMemory.raiseEvent("capture_image_event", "2d"))
+u: ([click capture] * image [3D treaty])  Okay ! I will click a three D image for you. $capture_image_event="3d"
+
+u: ([find search] * ["in here" inhaler internet]) Do you want me to search inhaler for you ?
+    u1:([yes yup]) Alright ! I will search inhaler for you. $search_asthama_pump_event="True"
+    u1:([no nup]) Nevermind. Let me know if there is anything else.
+
+u: ([find search] * [Ostomate estimate estimable asthama]) Do you want me to search aasthaama pump for you ?
+    u1:([yes yup]) Alright ! I will search it for you. $search_asthama_pump_event="True"
+    u1:([no nup]) Okay. Let me know if there is anything else.
