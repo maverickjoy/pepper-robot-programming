@@ -4,7 +4,7 @@ Here one will find some useful codes in the `basic-codes` directory, for creatin
 
 Pepper control including movement, speech and camera programs using speech and command line can be found in the `remote` directory.
 
-Pepper's one of the major application created is found in `object-detection` directory, in it does exploration and mapping in an unknown environment based on a graph algorithm which works in realtime as pepper moves by identifying and plotting nodes using matplotlib. And at every node reached we can make pepper do some task here it captures pictures of environment and gives it to a DL server which
+Pepper's one of the major application created is found in `object-detection` directory, in it does exploration and mapping in an unknown environment based on a graph algorithm which works in RealTime as pepper moves by identifying and plotting nodes using matplotlib. And at every node reached we can make pepper do some task here it captures pictures of environment and gives it to a DL server which
 by using [YOLO](https://pjreddie.com/darknet/yolo/) finds objects in the captured feed from pepper.
 
 ## Installation
@@ -23,13 +23,17 @@ If having a trouble while adding the python package on mac follow this [repo](ht
 
 - **Navigation and Mapping**
 
-<p align="center"><img src="https://raw.githubusercontent.com/maverickjoy/pepper-codes/master/docs/navigation-1.png" width="600"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/maverickjoy/pepper-codes/master/docs/navigation-1.png" width="650"></p>
 
-<p align="center"><img src="https://raw.githubusercontent.com/maverickjoy/pepper-codes/master/docs/navigation-2.png" width="600"></p>
+---
+
+<p align="center"><img src="https://raw.githubusercontent.com/maverickjoy/pepper-codes/master/docs/navigation-2.png" width="650"></p>
+
+---
 
 - **Video Link**
 
-[![ASTHAMA SERACH VIDEO][video-image]][video-url]]
+[![ASTHAMA SERACH VIDEO][video-image]][video-url]
 
 ## License
 
