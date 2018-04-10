@@ -1,5 +1,7 @@
 # PEPPER ROBOT CODES
 
+[![NAOqi][naoqi-image]][naoqi-url] [![Python SDK ][sdk-image]][sdk-url] [![MIT][mit-image]][mit-url] [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com) 
+
 Here one will find some useful codes in the `basic-codes` directory, for creating applications on pepper robot using python language.
 
 Pepper control including movement, speech and camera programs using speech and command line can be found in the `remote` directory.
@@ -37,6 +39,15 @@ If having a trouble while adding the python package on mac follow this [repo](ht
 ## License
 
 MIT License 2018 © Vikram Singh and [contributors](https://github.com/maverickjoy/pepper-codes/graphs/contributors)
+
+[sdk-url]: https://community.ald.softbankrobotics.com/en/resources/software/language/en-gb/robot/pepper-3
+[sdk-image]: https://img.shields.io/badge/Python%202.7%20SDK-2.5.5-008C96.svg?style=flat
+
+[naoqi-url]: https://developer.softbankrobotics.com/us-en/downloads/pepper
+[naoqi-image]: https://img.shields.io/badge/NAOqi-2.5.5-008C96.svg
+
+[mit-image]: https://img.shields.io/badge/license-MIT-blue.svg
+[mit-url]: https://opensource.org/licenses/MIT
 
 [video-image]: https://img.youtube.com/vi/lcxtWwkrp4c/0.jpg
 [video-url]: https://youtu.be/lcxtWwkrp4c
