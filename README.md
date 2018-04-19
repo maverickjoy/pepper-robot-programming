@@ -1,6 +1,6 @@
 # PEPPER ROBOT CODES
 
-[![NAOqi][naoqi-image]][naoqi-url] [![Python SDK ][sdk-image]][sdk-url] [![MIT][mit-image]][mit-url] [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com) 
+[![NAOqi][naoqi-image]][naoqi-url] [![Python SDK ][sdk-image]][sdk-url] [![MIT][mit-image]][mit-url] [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 
 Here one will find some useful codes in the `basic-codes` directory, for creating applications on pepper robot using python language.
 
@@ -34,7 +34,11 @@ If having a trouble while adding the python package on mac follow this [repo](ht
 
 - **Video Link**
 
-[![ASTHAMA SERACH VIDEO][video-image]][video-url]
+[![ASTHAMA SERACH VIDEO][video-image-1]][video-url-1]
+
+- **Other Video Links**
+
+[![FALL DETECTION VIDEO][video-image-2]][video-url-2]
 
 ## License
 
@@ -49,5 +53,8 @@ MIT License 2018 © Vikram Singh and [contributors](https://github.com/maverickj
 [mit-image]: https://img.shields.io/badge/license-MIT-blue.svg
 [mit-url]: https://opensource.org/licenses/MIT
 
-[video-image]: https://img.youtube.com/vi/lcxtWwkrp4c/0.jpg
-[video-url]: https://youtu.be/lcxtWwkrp4c
+[video-image-1]: https://img.youtube.com/vi/lcxtWwkrp4c/0.jpg
+[video-url-1]: https://youtu.be/lcxtWwkrp4c
+
+[video-image-2]: https://img.youtube.com/vi/n_cCs7YTf70/0.jpg
+[video-url-2]: https://youtu.be/n_cCs7YTf70
