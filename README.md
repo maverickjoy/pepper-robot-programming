@@ -40,6 +40,9 @@ If having a trouble while adding the python package on mac follow this [repo](ht
 
 [![FALL DETECTION VIDEO][video-image-2]][video-url-2]
 
+[![TICTACTOE VIDEO][video-image-3]][video-url-3]
+
+
 ## License
 
 MIT License 2018 © Vikram Singh and [contributors](https://github.com/maverickjoy/pepper-codes/graphs/contributors)
@@ -58,3 +61,6 @@ MIT License 2018 © Vikram Singh and [contributors](https://github.com/maverickj
 
 [video-image-2]: https://img.youtube.com/vi/n_cCs7YTf70/0.jpg
 [video-url-2]: https://youtu.be/n_cCs7YTf70
+
+[video-image-3]: https://img.youtube.com/vi/a2yzU2n8eSA/0.jpg
+[video-url-3]: https://youtu.be/a2yzU2n8eSA
