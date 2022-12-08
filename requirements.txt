@@ -1,7 +1,7 @@
 # qi and naoqi are installed as third party package inside python sdk. LINK : https://community.ald.softbankrobotics.com/en/resources/software/language/en-gb/field_software_type/sdk/robot/nao-2
 
 backports.functools-lru-cache==1.5
-certifi==2018.1.18
+certifi==2022.12.7
 chardet==3.0.4
 click==6.7
 cycler==0.10.0
